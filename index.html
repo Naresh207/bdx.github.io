@@ -3,56 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Invest in BDX Coin</title>
+  <title>BDX Coin | Invest in the Future</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </head>
 <body>
   <header>
-    <div class="container">
-      <h1>BDX Coin</h1>
-      <p>The Future of Secure and Decentralized Investments</p>
-      <a href="#about" class="btn">Learn More</a>
+    <nav class="navbar">
+      <div class="container">
+        <a href="#" class="logo">BDX Coin</a>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#benefits">Benefits</a></li>
+          <li><a href="#contact">Get Started</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="hero">
+      <div class="container">
+        <h1>Shape the Future with <span>BDX Coin</span></h1>
+        <p>Discover the cryptocurrency trusted by thousands of investors worldwide.</p>
+        <a href="#about" class="btn">Explore More</a>
+      </div>
     </div>
   </header>
 
-  <section id="about">
+  <section id="contact" class="section contact">
     <div class="container">
-      <h2>About BDX Coin</h2>
-      <p>BDX Coin is a revolutionary cryptocurrency designed for secure, scalable, and decentralized transactions. Join the wave of digital transformation today.</p>
-    </div>
-  </section>
-
-  <section id="benefits">
-    <div class="container">
-      <h2>Why Invest in BDX Coin?</h2>
-      <div class="benefit-card">
-        <h3>High Security</h3>
-        <p>Advanced blockchain technology ensures your investments are safe and secure.</p>
-      </div>
-      <div class="benefit-card">
-        <h3>Scalability</h3>
-        <p>Handles a high volume of transactions with ease.</p>
-      </div>
-      <div class="benefit-card">
-        <h3>Transparency</h3>
-        <p>Fully decentralized with transparent transactions.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="container">
-      <h2>Get Started with BDX Coin</h2>
+      <h2>Start Your Journey</h2>
+      <p>Ready to invest in the future? Fill out the form below and we’ll get in touch.</p>
       <form id="contact-form">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Your Name" required>
-        
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Your Email" required>
-        
-        <label for="message">Message</label>
-        <textarea id="message" name="message" placeholder="Why you’re interested in BDX Coin" required></textarea>
-        
+        <div class="form-group">
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <input type="email" id="email" name="email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+          <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+        </div>
         <button type="submit" class="btn">Submit</button>
       </form>
     </div>
@@ -64,6 +53,34 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // Initialize EmailJS
+    (function () {
+      emailjs.init("Nareshkumar"); // Replace with your EmailJS user ID
+    })();
+
+    // Form submission handler
+    document.getElementById("contact-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      // Collect form data
+      const formData = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        message: document.getElementById("message").value,
+      };
+
+      // Send email via EmailJS
+      emailjs.send("service_xok1apl", "YOUR_TEMPLATE_ID", formData)
+        .then(() => {
+          alert("Thank you! Your message has been sent.");
+          document.getElementById("contact-form").reset();
+        })
+        .catch((error) => {
+          console.error("Error sending email:", error);
+          alert("Failed to send your message. Please try again.");
+        });
+    });
+  </script>
 </body>
 </html>
