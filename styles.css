@@ -6,49 +6,77 @@ body {
 }
 
 header {
-  background: #4CAF50;
+  background: linear-gradient(to right, #4CAF50, #3B8B45);
   color: white;
+  padding: 40px 0;
   text-align: center;
-  padding: 50px 20px;
 }
 
-header h1 {
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+}
+
+.hero {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.hero h1 {
   font-size: 2.5rem;
 }
 
-header p {
-  font-size: 1.2rem;
+.hero span {
+  color: #FFEB3B;
 }
 
-header .btn {
-  background: #fff;
+.hero .btn {
+  background: white;
   color: #4CAF50;
   padding: 10px 20px;
   text-decoration: none;
-  font-weight: bold;
   border-radius: 5px;
-  margin-top: 20px;
-  display: inline-block;
+  font-weight: bold;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+.contact .form-group {
+  margin-bottom: 20px;
 }
 
-section {
-  padding: 50px 20px;
-  text-align: center;
+.contact input, .contact textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }
 
-#benefits .benefit-card {
-  display: inline-block;
-  margin: 10px;
-  padding: 20px;
-  background: #f9f9f9;
-  border-radius: 10px;
-  width: 30%;
+.contact .btn {
+  background: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
 }
 
 footer {
